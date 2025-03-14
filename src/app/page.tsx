@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Great_Vibes } from "next/font/google";
-import { Star } from "lucide-react";
+import { Link, Star } from "lucide-react";
 
 const dancingScript = Great_Vibes({ subsets: ["latin"], weight: "400" }); // You can adjust weight if needed
 
@@ -24,121 +24,109 @@ export default function Home() {
     
   <div>
     <div className="relative mx-auto">
-      <main className="2xl:w-[1600px] 2xl:h-[100vh] xl:h-[100vh] sm:h-[75vh] h-[85vh] mx-auto">
+    <main className="2xl:w-[1600px] 2xl:h-[100vh] xl:h-[100vh] sm:h-[75vh] h-[75vh] mx-auto relative">
 
-        <div className="absolute 2xl:w-[1600px]  inset-0 bg-[url('/backgroundhero.png')] bg-center bg-cover brightness-[0.2] mx-auto"></div>
+{/* Background */}
+<div className="absolute w-full h-full inset-0 bg-[url('/backgroundhero.png')] bg-center bg-cover brightness-[0.2]"></div>
 
-        {/* Navbar */}
-        <div className="2xl:w-[1600px] h-20  text-white text-center relative bg-transparent flex justify-center flex-col items-center mx-auto "> 
+{/* Navbar */}
+<div className="2xl:w-[1600px] h-20 text-white text-center relative flex justify-center flex-col items-center mx-auto"> 
+    <div className="w-full h-[50%] flex justify-center mt-6">
+        <h1 className="text-[1.2rem] text-orange-400 font-extrabold">food</h1>
+        <h1 className="text-[1.2rem] font-extrabold">Tuck</h1>
+    </div>  
 
-           <div className="w-full h-[50%] flex justify-center mt-6">
-              <h1 className="text-[1.2rem] text-orange-400 font-extrabold">food</h1>
-              <h1 className=" text-[1.2rem] font-extrabold">Tuck</h1>
-            </div>  
-
-              <div className="2xl:w-[68%] h-[50%] flex items-center justify-between mx-auto">
-                <div>
-                    <ol className=" flex 2xl:gap-6 xl:gap-5 lg:gap-4 gap-2 mx-auto">
-                       <a>Home</a>
-                       <a>Menu</a>
-                       <a>Blog</a>
-                       <a>Pages</a> 
-                       <a>About</a> 
-                       <a>Shop</a>
-                       <a>Contact</a> 
-                    </ol> 
-                </div>
-
-                <div>
-                  <ol>
-                    <li><input className=" absolute inset-20 2xl:relative 2xl:inset-0 h-8 mx-auto 2xl:mt-0 xl:mt-0 mt-3  border-orange-400 border rounded-2xl bg-transparent px-4" type="text" placeholder="Search" /></li>
-                    <li></li>
-                  </ol>
-                </div>
-
-              </div>  
-
+    <div className="2xl:w-[68%] grid lg:grid-cols-2 lg:grid-rows-1 grid-cols-1 grid-rows-2 h-[50%] flex items-center gap-10 justify-between mx-auto">
+        <div>
+            <ol className="flex 2xl:gap-6 xl:gap-5 lg:gap-4 gap-2 mx-auto mt-5">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#blog">Blog</a>
+                <a href="#pages">Pages</a> 
+                <a href="#about">About</a> 
+                <a href="#shop">Shop</a>
+                <a href="#contact">Contact</a> 
+            </ol> 
         </div>
 
-
-
-  <div className="relative z-10 h-[90%] flex sm:flex-row flex-col items-center justify-center sm:mt-0 mt-12">
-           <div className="2xl:w-[40%] xl:w-[45%] w-[100%] h-[72%] mx-auto flex flex-col justify-center gap-5 px-20 text-white">
-              <div className="text-orange-400 text-3xl"><p className={dancingScript.className}>The quick & amusing!</p></div>
-               <div className="text-white 2xl:text-5xl xl:text-5xl lg:text-5xl text-3xl flex ">
-                    <p className="text-orange-400 font-semibold">Th</p>
-                    <p className="font-semibold">e Art of speed food Quality</p>
-                  </div>
-                   <div className="w-[85%] ">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Varius sed pharetra dictum neque massa congue</p>
-                   </div>
-               <div>
-                  <button className="bg-yellow-500 w-[32%] h-12 rounded-3xl">see menu</button>
-               </div>
+        <div>
+            <input 
+                className="h-8 border-orange-400 border rounded-2xl bg-transparent px-4 mt-5 " 
+                type="text" 
+                placeholder="Search" 
+            />
         </div>
+    </div>  
+</div>
 
+{/* Main Content */}
+<div id="home" className="relative z-10 h-[90%] flex sm:flex-row flex-col items-center justify-center sm:mt-0 mt-12 px-6">
+    
+    {/* Left Content */}
+    <div className="2xl:w-[40%] xl:w-[45%] w-full h-auto mx-auto flex flex-col justify-center gap-5 text-white">
+        <div className="text-orange-400 text-3xl">
+            <p className={dancingScript.className}>The quick & amusing!</p>
+        </div>
+        <div className="text-white 2xl:text-5xl xl:text-5xl lg:text-5xl text-3xl flex">
+            <p className="text-orange-400 font-semibold">Th</p>
+            <p className="font-semibold">e Art of Speed Food Quality</p>
+        </div>
+        <div className="w-[85%]">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue.</p>
+        </div>
+        <div>
+            <button className="bg-yellow-500 w-[40%] sm:w-[32%] h-12 rounded-3xl">See Menu</button>
+        </div>
+    </div>
 
-           <div className="2xl:w-[40%] xl:w-[45%] sm:w-0 lg:w-[45%] w-[400px] h-[72%] mx-auto flex items-center">
-              <div className="sm:w-[55%] w-[40%] sm:h-[73%] h-[58%] border-[2px] sm:ml-0 ml-40 rounded-full">
-
-              <Image
-                 src="/image1.png" 
-                 alt="img"
-                 className="ml-11 mt-4 "
-                 width={500}
-                 height={500}
-              />
-
-              <Image
-                  src="/image2.png"
-                  alt="img2"
-                  className="sm:w-[100px] w-[55px] sm:mt-[-370px] xl:mt-[-345px] 2xl:mt-[-370px] mt-[-200px]"
-                  width={80}
-                  height={80}
-              />
-
-              <Image
-                  src="/image3.png"
-                  alt="img2"
-                  className=" sm:w-[80px] w-[50px] sm:ml-0 ml-3 relative top-10 right-9"
-                  width={70}
-                  height={70}
-              />
-
-              <Image
-                  src="/image4.png"
-                  alt="img2"
-                  className="sm:w-[80px] w-[43px] relative top-20 left-1"
-                  width={60}
-                  height={60}
-              />
-
-              <Image
-                  src="/image5.png"
-                  alt="img2"
-                  className=" sm:w-[30px] w-[30px] relative sm:top-[74px] top-16 sm:left-24 left-20"
-                  width={25}
-                  height={25}
-              />
-
-              {/* <Image
-                 src="/image6.png" 
-                 alt="img"
-                 className="mt-[-300px] ml-36 z-50 absolute  "
-                 width={300}
-                 height={300}
-              /> */}
-
-              </div>
-           </div>
-  </div>
-      </main>
-      
+    {/* Right Food Images - Hidden on Mobile */}
+    <div className="2xl:w-[40%] xl:w-[45%] lg:w-[45%] h-auto mx-auto flex items-center hidden lg:flex">
+        <div className="w-[55%] h-[73%] border-[2px] rounded-full relative flex justify-center items-center">
+            
+            <Image
+                src="/image1.png" 
+                alt="Main Food"
+                className="absolute"
+                width={500}
+                height={500}
+            />
+            <Image
+                src="/image2.png"
+                alt="Small Food 1"
+                className="absolute sm:w-[100px] w-[80px] top-[-60px] left-[50%] transform -translate-x-1/2"
+                width={80}
+                height={80}
+            />
+            <Image
+                src="/image3.png"
+                alt="Small Food 2"
+                className="absolute sm:w-[80px] w-[60px] bottom-[-40px] left-[20%]"
+                width={70}
+                height={70}
+            />
+            <Image
+                src="/image4.png"
+                alt="Small Food 3"
+                className="absolute sm:w-[80px] w-[60px] bottom-[30%] right-0"
+                width={60}
+                height={60}
+            />
+            <Image
+                src="/image5.png"
+                alt="Small Food 4"
+                className="absolute sm:w-[30px] w-[25px] top-[50%] left-[80%]"
+                width={25}
+                height={25}
+            />
+        </div>
+    </div>
+</div>
+</main>
+  
     </div>
 
 
-            <div className="2xl:max-w-[1600px] 2xl:h-[70vh] h-[110vh]  bg-black text-white mx-auto flex justify-center items-center mx-auto">
+            <div id="about" className="2xl:max-w-[1600px] 2xl:h-[70vh] h-[110vh]  bg-black text-white mx-auto flex justify-center items-center mx-auto">
                 <div className="w-[77%] 2xl:h-[75%] xl:h-[75%] lg:h-[75%] flex flex flex-wrap">
                     <div className="2xl:w-[50%] h-full ">
                          <div className="flex h-full flex-col justify-center gap-5">
@@ -314,7 +302,7 @@ export default function Home() {
 
 
 
-      <div className="2xl:w-[1600px] h-[60vh] relative mx-auto">
+      <div id="pages" className="2xl:w-[1600px] h-[60vh] relative mx-auto">
               <div className="absolute inset-0 bg-[url('/image51.png')] bg-cover bg-center brightness-[0.2] z-0"></div>
 
 
@@ -371,7 +359,7 @@ export default function Home() {
 
 
 
-      <section className="bg-black text-white py-16 px-6">
+      <section id="menu" className="bg-black text-white py-16 px-6">
       <div className="max-w-7xl mx-auto text-center">
         <p className="text-orange-400 text-lg font-medium">Choose & Pick</p>
         <h2 className="text-4xl font-bold mt-2">
@@ -455,7 +443,7 @@ export default function Home() {
 
       {/*chefs */}
 
-      <div className="2xl:w-[1600px] md:h-[580px] h-[550px] bg-black text-white flex items-center flex-col gap-5 mx-auto">
+      <div id="shop" className="2xl:w-[1600px] md:h-[580px] h-[550px] bg-black text-white flex items-center flex-col gap-5 mx-auto">
 
             <div className="text-orange-400 text-3xl"><p className={dancingScript.className}>Chefs</p></div>
             <div className="2xl:text-5xl xl:text-5xl text-3xl flex justify-center"> <p className="text-orange-400">Fr</p><p>om Our Menu</p></div>
@@ -510,7 +498,7 @@ export default function Home() {
 
 
       
-    <div className="w-full min-h-screen bg-black flex justify-center items-center px-4 sm:px-8 ">
+    <div  className="w-full min-h-screen bg-black flex justify-center items-center px-4 sm:px-8 ">
       <div className="bg-black w-full max-w-7xl h-auto flex flex-col items-center py-12">
         {/* Heading */}
         <div className="text-center">
@@ -612,7 +600,7 @@ export default function Home() {
 
 
 
-    <section className="w-full bg-black py-12 px-4 sm:px-8">
+    <section id="blog" className="w-full bg-black py-12 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto text-center">
         {/* Heading */}
         <h4 className="text-orange-300 text-lg font-semibold">Blog Post</h4>
@@ -664,7 +652,7 @@ export default function Home() {
         </div>
 
         {/* Subscription Section */}
-        <div className="mt-12 text-white text-center">
+        <div id="contact" className="mt-12 text-white text-center">
           <h3 className="text-xl sm:text-2xl font-semibold">
             <span className="text-orange-400">Still</span> You Need Our Support?
           </h3>
