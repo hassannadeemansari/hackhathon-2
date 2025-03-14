@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Great_Vibes } from "next/font/google";
-import { Link, Star } from "lucide-react";
+import {  Star } from "lucide-react";
 
 const dancingScript = Great_Vibes({ subsets: ["latin"], weight: "400" }); // You can adjust weight if needed
 
